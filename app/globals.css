@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .toggle {
+        @apply relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:border-x-[3px] before:border-amber-300 bg-gradient-to-r from-amber-500 from-[40px] to-amber-400 to-100%;
+    }
+}
+
+body:has(header nav input:checked) aside {
+    @apply w-64 max-sm:left-0;
+}
+
+@layer utilities {
+    @media not all and (min-width: 640px) {
+        .hola:has(input:focus) {
+            @apply w-full h-14 bg-amber-500 fixed left-0 top-0 z-10 rounded-none max-sm:bg-amber-500 [&>label]:hidden [&>input]:w-full [&>input]:h-full [&>input]:px-2 [&>input]:font-bold [&>input]:text-xl placeholder:[&>input]:text-gray-100;
+        }
+    }
+}
+
+.slick-slide {
+    @apply px-2;
+}
